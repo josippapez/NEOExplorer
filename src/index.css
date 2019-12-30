@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.top-buffer{
+  margin-top:50px;
+}
+
+.col-md-4 canvas{
+  margin-left: 25%;
+  margin-top:10%;
+}
+.col-md-4 h5{
+  margin-top:10%;
+  margin-bottom:10%;
+  margin-left:30%;
+}
