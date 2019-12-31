@@ -12,15 +12,19 @@ function CardSummary({nearEarthObject}) {
                 </div>
                 <div className="card-body col-md-8 bg-light p-5">
                     <p className="font-weight-bold">ESTIMATED DIAMETER</p>
-                    <p>ESTIMATED DIAMETER (min): {Number(nearEarthObject.estimated_diameter.meters.estimated_diameter_min).toFixed(2)}</p>
-                    <p>ESTIMATED DIAMETER (max): {Number(nearEarthObject.estimated_diameter.meters.estimated_diameter_max).toFixed(2)}</p>
+                    <p>ESTIMATED DIAMETER (min): {Number(nearEarthObject.estimated_diameter.meters.estimated_diameter_min).toFixed(2)} m</p>
+                    <p>ESTIMATED DIAMETER (max): {Number(nearEarthObject.estimated_diameter.meters.estimated_diameter_max).toFixed(2)} m</p>
+                    <p>ESTIMATED DIAMETER (mean): {Number((nearEarthObject.estimated_diameter.meters.estimated_diameter_max + nearEarthObject.estimated_diameter.meters.estimated_diameter_min)/(2)).toFixed(2)} m</p>
                     <p>IS IT POTENTIALLY HAZARDOUS: {(nearEarthObject.is_potentially_hazardous_asteroid) ? ("YES") : ("NO")}</p>
                     {(nearEarthObject.close_approach_data.length>0 ? (
                         <div>
                             <p className="font-weight-bold">CLOSE APPROACH DATA</p>
                             <p>ORBITING BODY: {nearEarthObject.close_approach_data[nearEarthObject.close_approach_data.length-1].orbiting_body}</p>
                             <p>RELATIVE VELOCITY: {Number(nearEarthObject.close_approach_data[nearEarthObject.close_approach_data.length-1].relative_velocity.kilometers_per_hour).toFixed(2)} km/h</p>
-                            <p>MISS DISTANCE: {Number(nearEarthObject.close_approach_data[nearEarthObject.close_approach_data.length-1].miss_distance.kilometers).toFixed(0)} km</p>
+                            <p>MISS DISTANCE: {(nearEarthObject.close_approach_data[nearEarthObject.close_approach_data.length-1].miss_distance.kilometers.length>5) ?
+                            (nearEarthObject.close_approach_data[nearEarthObject.close_approach_data.length-1].miss_distance.astronomical + " au")
+                            :
+                            (Number(nearEarthObject.close_approach_data[nearEarthObject.close_approach_data.length-1].miss_distance.kilometers).toFixed(0)) + " km"}</p>
                         </div>
                     ):(""))}
                     <div>
