@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(15,17,18);
+  background: -moz-linear-gradient(149deg, rgba(15,17,18,1) 13%, rgba(60,71,55,0.2889356426164216) 100%);
+  background: -webkit-linear-gradient(149deg, rgba(15,17,18,1) 13%, rgba(60,71,55,0.2889356426164216) 100%);
+  background: linear-gradient(149deg, rgba(15,17,18,1) 13%, rgba(60,71,55,0.2889356426164216) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f1112",endColorstr="#3c4737",GradientType=1);  
 }
 
 code {
@@ -23,4 +28,8 @@ code {
 .col-md-4 h5{
   margin-top:50px;
   text-align: center;
+}
+
+.neo-data{
+  margin-left: 2%;
 }
