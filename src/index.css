@@ -17,11 +17,10 @@ code {
 }
 
 .col-md-4 canvas{
-  margin-left: 25%;
-  margin-top:10%;
+  margin-left: 20%;
+  vertical-align: middle;
 }
 .col-md-4 h5{
-  margin-top:10%;
-  margin-bottom:10%;
-  margin-left:30%;
+  margin-top:50px;
+  text-align: center;
 }
