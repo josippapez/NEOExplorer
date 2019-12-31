@@ -22,8 +22,11 @@ code {
 }
 
 .col-md-4 canvas{
-  margin-left: 20%;
-  vertical-align: middle;
+  border-radius: 50%;
+  background-color: white;
+  width: 80%;
+  margin-left: 10%;
+  height: auto;
 }
 .col-md-4 h5{
   margin-top:50px;
