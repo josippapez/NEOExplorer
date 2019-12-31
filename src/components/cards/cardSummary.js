@@ -45,19 +45,25 @@ function CardSummary({nearEarthObject}) {
                             </div>
                         </div>
                     ):(""))}
-                    <div>
-                            <p className="font-weight-bold">ORBITAL DATA</p>
-                            <p>FIRST OBSERVATION DATE: {nearEarthObject.orbital_data.first_observation_date}</p>
-                            <p>LAST OBSERVATION DATE: {nearEarthObject.orbital_data.last_observation_date}</p>
-                            <p>ORBIT DETERMINATION DATE: {nearEarthObject.orbital_data.orbit_determination_date}</p>
-                    
-                    {(nearEarthObject.orbital_data.orbit_class!=null ? (
-                        <div>
-                            <p>ORBIT CLASS TYPE: {nearEarthObject.orbital_data.orbit_class.orbit_class_type}</p>
-                            <p>ORBIT CLASS DESCRIPTION: {nearEarthObject.orbital_data.orbit_class.orbit_class_description}</p>
+                    <p className="font-weight-bold">ORBITAL DATA</p>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <p>FIRST OBSERVATION DATE:</p>
+                                <p>LAST OBSERVATION DATE:</p>
+                                <p>ORBIT DETERMINATION DATE:</p>
+                            </div>
+                            <div className="col-md-6">
+                                <p>{nearEarthObject.orbital_data.first_observation_date}</p>
+                                <p>{nearEarthObject.orbital_data.last_observation_date}</p>
+                                <p>{nearEarthObject.orbital_data.orbit_determination_date}</p>
+                            </div>
                         </div>
-                    ) :(""))}
-                    </div>
+                    {(nearEarthObject.orbital_data.orbit_class!=null ? (
+                                        <div>
+                                            <p>ORBIT CLASS TYPE: {nearEarthObject.orbital_data.orbit_class.orbit_class_type}</p>
+                                            <p>ORBIT CLASS DESCRIPTION: {nearEarthObject.orbital_data.orbit_class.orbit_class_description}</p>
+                                        </div>
+                                    ) :(""))}
                 </div>
             </div>
         </div>
