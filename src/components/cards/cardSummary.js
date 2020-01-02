@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
+import randomColor from 'randomcolor'
 
-function CardSummary({nearEarthObject}) {
+class CardSummary extends Component {
+    componentDidMount() {
+        const canvas = this.refs.canvas;
+        const ctx = canvas.getContext("2d");
+        var my_gradient=ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        my_gradient.addColorStop(0, "black");
+        my_gradient.addColorStop(1, "white");
+        ctx.fillStyle = my_gradient;
+        for(let i= 0 ; i<Math.random()*5;i++){
+            ctx.beginPath();
+            ctx.arc(Math.random()*140, Math.random()*140, Math.random()*50, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    }
+    render(){
+    var {nearEarthObject} = this.props;
     return (
-        <div className="card shadow-lg mb-3" style={{'backgroundColor': '#1f0033'}}>
+        <div className="card shadow-lg mb-3" style={{'backgroundColor': `${randomColor({luminosity: 'dark'})}`}}>
             <div className="row no-gutters">
                 <div className="col-md-4">
-                    <canvas className="top-buffer" width="200px" height="200px"/>
+                    <canvas className="top-buffer" ref="canvas" width="200px" height="200px" style={{'backgroundColor' : '#d8e5f3'}}/>
                     <h5 className="text-white card-title">{nearEarthObject.name}</h5>
                 </div>
                 <div className="card-body col-md-8 bg-light p-5">
@@ -78,6 +94,7 @@ function CardSummary({nearEarthObject}) {
             </div>
         </div>
     )
+    }
 }
 
 export default CardSummary;
